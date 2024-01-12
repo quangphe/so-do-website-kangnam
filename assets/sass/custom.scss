@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+    --primary-font: 'Montserrat', sans-serif;
+    --secondary-font: Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --white-color: #fff;
+    --basic-color:#f0f0f0;
+    --primary-color:#006631;
+    --info-color: #5bc0de;
+}
+
+.aligncenter{margin:20px auto;text-align:center;display:block;max-width:100%;height:auto}
+blockquote{border:3px dashed #25c757eb;background:#fff;margin:0 auto 10px;padding:0 20px;max-width:80%}
+
+.popupyt_1_0_1 iframe{width:100%}
+
+body.site{
+    padding-top:90px;
+}
+body.home{
+    padding-top:62px;
+}
+@media (max-width: 1024px) {
+    body.site{
+        padding-top:80px;
+    }
+    body.home{
+        padding-top:59px;
+    }
+}
+@media (max-width: 600px) {
+    body.site{
+        padding-top:65px;
+    }
+    body.home{
+        padding-top:63px;
+    }
+}
+.modal-box{
+    width:550px;
+}

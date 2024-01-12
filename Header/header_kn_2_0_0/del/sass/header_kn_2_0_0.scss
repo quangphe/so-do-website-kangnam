@@ -1,0 +1,307 @@
+.header_kn_2_0_0 {
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  box-shadow: 0 0 16px 1px rgba(0,0,0,.2);
+  &__top {
+    background-color: #003c77;
+    padding: 5px 0;
+    position: relative;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__logo {
+    display: block;
+    width: 180px;
+    img {
+      width: 100%;
+      height: auto;
+      display: flex;
+    }
+  }
+  &__name {
+    text-transform: uppercase;
+    color: #fec465;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  &__action {
+    display: flex;
+    align-items: center;
+  }
+  &__redirectWeb {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px 10px;
+    border-radius: 50px;
+    &:hover {
+      background-color: #fff;
+      color: #003c77;
+      transition: all 0.2s linear;
+    }
+  }
+  &__global {
+    margin-left: 15px;
+    width: 210px;
+    img {
+      width: 100%;
+      height: auto;
+      display: flex;
+    }
+  }
+  &__bottom {
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+  }
+  &__nav {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    &Item {
+      display: inline-block;
+      width: 14%;
+      position: relative;
+      > a {
+        text-transform: capitalize;
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 10px 10px;
+        text-wrap: nowrap;
+        > span {
+            display: none;
+        }
+      }
+      &:hover {
+        > a {
+          color: #9c7235;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  &__dropdown {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: #ffffff80;
+    max-width: 220px;
+    width: max-content;
+    &Item {
+      display: inline-block;
+      width: 100%;
+      transition: 0.2s all linear;
+      > a {
+        text-transform: capitalize;
+        display: block;
+        padding: 8px 10px;
+        transition: 0.2s all linear;
+      }
+      &:not(:last-child) > a {
+        border-bottom: 1px solid #fff;
+      }
+      &:hover {
+        background-color: #fff;
+        > a {
+          border-color: #9c7235;
+        }
+      }
+    }
+  }
+  &__head {
+    display: none;
+  }
+  &__button {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    gap: 6px;
+    font-size: 30px;
+    cursor: pointer;
+    span {
+      line-height: 0;
+    }
+  }
+  &__close {
+    display: none;
+  }
+  &__bg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    opacity: 0;
+  }
+  @media (max-width: 1200px) {
+    &__brand {
+      gap: 5px;
+    }
+    &__logo {
+      width: 150px;
+    }
+    &__name {
+      font-size: 15px;
+    }
+    &__redirectWeb {
+      font-size: 14px;
+    }
+    &__global {
+      margin-left: 10px;
+      width: 180px;
+    }
+    &__navItem > a {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      >span{
+        display: block;
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    &__top {
+      .container {
+        flex-direction: column;
+      }
+    }
+    &__logo {
+      width: 140px;
+    }
+    &__name {
+      display: none;
+    }
+    &__button {
+      display: flex;
+      position: absolute;
+      top: 20px;
+      left: 25px;
+    }
+    &__redirectWeb {
+      padding: 2px 10px;
+    }
+    &__bottom {
+      transform: translateX(-100%);
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s all ease-in-out;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      max-width: 330px;
+      height: 100vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      .container {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      &.show {
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+        z-index: 10;
+      }
+    }
+    &__close {
+      display: block;
+      width: 10px;
+      margin-top: 5px;
+      margin-left: auto;
+      margin-right: 20px;
+      font-size: 21px;
+      cursor: pointer;
+    }
+    &__nav {
+      display: block;
+      width: 100%;
+      &Item {
+        display: block;
+        width: 100%;
+        position: static;
+        > a {
+          padding: 10px 20px;
+          text-transform: uppercase;
+        }
+        &:not(:last-child) > a {
+          border-bottom: 1px solid #e1dddd;
+        }
+      }
+    }
+    &__dropdown {
+      transform: translateX(100%);
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s all ease-in-out;
+      display: block;
+      z-index: 1;
+      background-color: #fff;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      top: 0;
+      left: 0;
+      &Item {
+        display: block;
+        width: 100%;
+        > a {
+          padding: 15px 20px;
+          text-transform: uppercase;
+        }
+        &:not(:last-child) > a {
+          border-bottom: 1px solid #e1dddd;
+        }
+      }
+      &.show {
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    &__head {
+      text-align: center;
+      text-transform: capitalize;
+      font-weight: 600;
+      position: relative;
+      display: block;
+    }
+    &__back {
+      position: absolute;
+      left: 20px;
+      cursor: pointer;
+    }
+    &__bg {
+        background-color: #000;
+        opacity: 0.5;
+    }
+  }
+  @media (max-width: 767px){
+    &__bottom{
+        max-width: 280px;
+    }
+  }
+}
+.fixed-body{
+    height: 100vh;
+    overflow: hidden;
+}
